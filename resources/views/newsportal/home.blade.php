@@ -168,7 +168,7 @@
 
 
 
-{{--                                              অর্থনীতি-ব্যবসা      --}}
+{{--                                            খেলাধুলা      --}}
 
 
 													<div class="row vc_row vc_inner vc_row-fluid 111">
@@ -193,7 +193,7 @@
 
 
 
-@foreach($international as $international_data)
+@foreach($sports as $international_data)
 
 																		<div class="post-284623 type-post format-standard has-post-thumbnail listing-item listing-item-thumbnail listing-item-tb-1 main-term-23">
 																			<div class="item-inner clearfix">
@@ -427,7 +427,7 @@
 														<div class="bgblack wpb_column vc_column_container vc_col-sm-3 vc_hidden-md vc_hidden-sm vc_hidden-xs">
 															<div class="bs-vc-wrapper vc_custom_1565253515313">
 																<div class="bs-shortcode bs-text bscb-72340 bs-hidden-md bs-hidden-sm bs_title_halka1">
-																	<h3 class="section-heading sh-t6 sh-s13"><a href=""><span class="h-text">সর্বাধিক পঠিত</span></a></h3>
+																	<h3 class="section-heading sh-t6 sh-s13"><a href=""><span class="h-text">অনন্য</span></a></h3>
 																	<style>
 																	.bscb-72340 .section-heading.sh-t6 .other-link:hover .h-text,.bscb-72340 .section-heading.sh-t6 .other-link.active .h-text{color:#444444}.bscb-72340.bscb-72340.bscb-72340.bscb-72340 .section-heading.sh-t6:before,.bscb-72340.bscb-72340 .section-heading.sh-t6:before,.bscb-72340 .section-heading.sh-t6 > .h-text,.bscb-72340 .section-heading.sh-t6 > .h-text:before,.bscb-72340.bscb-72340.bscb-72340.bscb-72340 .section-heading.sh-t6 > .main-link > .h-text,.bscb-72340.bscb-72340.bscb-72340.bscb-72340 .section-heading.sh-t6 > .main-link > .h-text:before,.bscb-72340.bscb-72340 .section-heading.sh-t6 > a:first-child:last-child > .h-text,.bscb-72340.bscb-72340 .section-heading.sh-t6 > a:first-child:last-child > .h-text:before{background-color:#444444}
 
@@ -453,7 +453,7 @@
 																	<div class="bs-text-content"></div>
 																</div><!-- .bs-text -->
 
-                                                               @foreach($international_all  as $key=>$international_all_data)
+  @foreach($international_all  as $key=>$international_all_data)
 
                           @if($key+1 == 3)
                             @break
@@ -490,7 +490,8 @@
 																<div class=" bs-listing bs-listing-listing-thumbnail-1 bs-listing-single-tab">
 																	<div class="listing listing-thumbnail listing-tb-1 clearfix columns-2">
 
-@foreach($international_all  as $international_all_data)
+@foreach($international_all  as $key=>$international_all_data)
+    @break($key == 10)
 
 																		<div class="post-285215 type-post format-standard has-post-thumbnail listing-item listing-item-thumbnail listing-item-tb-1 main-term-15">
 																			<div class="item-inner clearfix">
@@ -512,7 +513,7 @@
 														<div class="bgblack wpb_column vc_column_container vc_col-sm-3">
 															<div class="bs-vc-wrapper vc_custom_1565252627444">
 																<div class="bs-shortcode bs-text bscb-36668 bs-hidden-lg bs_title_halka2">
-																	<h3 class="section-heading sh-t6 sh-s13"><a href=""><span class="h-text">সর্বাধিক পঠিত</span></a></h3>
+																	<h3 class="section-heading sh-t6 sh-s13"><a href=""><span class="h-text">অনন্য</span></a></h3>
 																	<style>
 																	.bscb-36668 .section-heading.sh-t6 .other-link:hover .h-text,.bscb-36668 .section-heading.sh-t6 .other-link.active .h-text{color:#444444}.bscb-36668.bscb-36668.bscb-36668.bscb-36668 .section-heading.sh-t6:before,.bscb-36668.bscb-36668 .section-heading.sh-t6:before,.bscb-36668 .section-heading.sh-t6 > .h-text,.bscb-36668 .section-heading.sh-t6 > .h-text:before,.bscb-36668.bscb-36668.bscb-36668.bscb-36668 .section-heading.sh-t6 > .main-link > .h-text,.bscb-36668.bscb-36668.bscb-36668.bscb-36668 .section-heading.sh-t6 > .main-link > .h-text:before,.bscb-36668.bscb-36668 .section-heading.sh-t6 > a:first-child:last-child > .h-text,.bscb-36668.bscb-36668 .section-heading.sh-t6 > a:first-child:last-child > .h-text:before{background-color:#444444}
 
@@ -523,7 +524,7 @@
 																	<div class="listing listing-thumbnail listing-tb-1 clearfix columns-1">
 
 
-@foreach($best_reading as $key=>$best_reading_data)
+@foreach($other as $key=>$best_reading_data)
 
                             @break($key == 8)
 
@@ -605,12 +606,12 @@
 																	<div class="listing listing-grid listing-grid-1 clearfix columns-1">
 
 
-																		<div class="post-285233 type-post format-standard has-post-thumbnail listing-item listing-item-grid listing-item-grid-1 main-term-15">
+																		<div class="post-285233 type-post format-standard has-post-thumbnail listing-item listing-item-grid listing-item-grid-1 main-term-15" sty>
 																			<div class="item-inner">
 																				<div class="featured clearfix">
 																					<a class="img-holder" data-bsrjs="{{$international_all_data['image']}}" href="{{$international_all_data['link']}}" style="background-image: url({{$international_all_data['image']}});" title="{{$international_all_data['text']}}"></a>
 																				</div>
-																				<h3 class="title"><a class="post-title post-url" href="{{$international_all_data['link']}}">{{$international_all_data['text']}}</a></h3>
+																				<h3 class="title" style="padding: 5.5px"><a class="post-title post-url" href="{{$international_all_data['link']}}" >{{$international_all_data['text']}}</a></h3>
 																			</div>
 																		</div>
 

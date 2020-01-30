@@ -34,16 +34,16 @@ class newsController extends Controller
         });
 
 
-        $url = 'https://news.bd24report.com/bn/?cat=20';
+       $url = 'https://news.bd24report.com/bn/?cat=20';
        $client = new Client();
        $response = $client->request('GET', $url);
        $response_status_code = $response->getStatusCode();
        $html = ''.$response->getBody();
 
        $crawler = new Crawler($html);
-        $national = $crawler->filter('.td-block-span6  > div')->each(function (Crawler $node, $i)       {
-            $text = $node->filter('a')->attr('title');
-            $images = $node->filter('img')->attr('src');
+        $national = $crawler->filter('.tdb_module_loop  > div')->each(function (Crawler $node, $i)       {
+            $text = $node->filter('h3')->text();
+            $images = $node->filter('span')->attr('data-img-url');
             $link = $node->filter('a')->attr('href');
 
             $item= [
@@ -78,16 +78,16 @@ class newsController extends Controller
 
 
         //আন্তর্জাতিক
-          $url = 'https://news.bd24report.com/bn/?cat=24';
+       $url = 'https://news.bd24report.com/bn/?cat=24';
        $client = new Client();
        $response = $client->request('GET', $url);
        $response_status_code = $response->getStatusCode();
        $html = ''.$response->getBody();
 
        $crawler = new Crawler($html);
-        $international_all = $crawler->filter('.td-block-span6  > div')->each(function (Crawler $node, $i)       {
-            $text = $node->filter('a')->attr('title');
-            $images = $node->filter('img')->attr('src');
+        $international_all = $crawler->filter('.tdb_module_loop  > div')->each(function (Crawler $node, $i)       {
+            $text = $node->filter('h3')->text();
+            $images = $node->filter('span')->attr('data-img-url');
             $link = $node->filter('a')->attr('href');
 
             $item= [
@@ -100,17 +100,18 @@ class newsController extends Controller
         });
 
 
-//        td_module_wrap
-//        সর্বাধিক পঠিত
-       $url = 'https://news.bd24report.com/bn/';
+
+//     অনন্য
+       $url = 'https://news.bd24report.com/bn/?cat=19';
        $client = new Client();
        $response = $client->request('GET', $url);
        $response_status_code = $response->getStatusCode();
        $html = ''.$response->getBody();
 
        $crawler = new Crawler($html);
-        $best_reading = $crawler->filter('.td-block-span12 > div')->each(function (Crawler $node, $i)       {
+       $other = $crawler->filter('.tdb_module_loop  > div')->each(function (Crawler $node, $i)       {
             $text = $node->filter('h3')->text();
+            $images = $node->filter('span')->attr('data-img-url');
             $link = $node->filter('a')->attr('href');
 
             $item= [
@@ -123,10 +124,13 @@ class newsController extends Controller
         });
 
 
+//       dd($other);
+
+
 
 
 //        খেলাধূলা
-        $url = 'https://news.bd24report.com/bn/?cat=21';
+        $url = 'https://news.bd24report.com/post/category/খেলাধুলা/';
        $client = new Client();
        $response = $client->request('GET', $url);
        $response_status_code = $response->getStatusCode();
@@ -204,9 +208,9 @@ class newsController extends Controller
        $html = ''.$response->getBody();
 
        $crawler = new Crawler($html);
-        $lifestyle = $crawler->filter('.td-block-span6  > div')->each(function (Crawler $node, $i)       {
-            $text = $node->filter('a')->attr('title');
-            $images = $node->filter('img')->attr('src');
+        $lifestyle = $crawler->filter('.tdb_module_loop  > div')->each(function (Crawler $node, $i)       {
+            $text = $node->filter('h3')->text();
+            $images = $node->filter('span')->attr('data-img-url');
             $link = $node->filter('a')->attr('href');
 
             $item= [
@@ -321,6 +325,6 @@ class newsController extends Controller
         $date = bangla_date(time(),"en");
 
 
-        return view('newsportal.home',compact('international','national','latest','international_all','best_reading','sports','exclusive','intertainment','health','special_report','date','politics','different_news','lifestyle'));
+        return view('newsportal.home',compact('international','national','latest','international_all','other','sports','exclusive','intertainment','health','special_report','date','politics','different_news','lifestyle'));
     }
 }

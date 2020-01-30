@@ -20,6 +20,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
@@ -152,6 +155,7 @@
       <workItem from="1580188579345" duration="5713000" />
       <workItem from="1580194389135" duration="4507000" />
       <workItem from="1580207651441" duration="441000" />
+      <workItem from="1580364810478" duration="3464000" />
     </task>
     <servers />
   </component>
